@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WallGame</title>
+  </head>
+  <body>
+    <script type='text/javascript'>
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          return function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            console.log(text);
+          };
+        })(),
+        printErr: function(text) {
+          if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+          //console.log(text);
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+        }
+      };
+      console.log('Downloading...');
+      window.onerror = function(event) {
+        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+      };
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <script type="text/javascript" src="function.js"></script>
+
+    <canvas id="field" width="480" height="480"></canvas>
+
+    <br>
+    <button class="button" onclick=route()>Output Route</button>
+    <input class="normal" id="route_person_id" type="text" placeholder="route_person_id">
+    <input class="normal" id="route_x" type="text" placeholder="route_x">
+    <input class="normal" id="route_y" type="text" placeholder="route_y">
+    <br>
+    <br>
+    <select class="menu" id="field_name">
+    </select>
+    <button class="button" onclick=read_field()>Read Field</button>
+    <button class="button" onclick=make_random_field()>Make Random Field</button>
+    <br>
+    <input class="normal" id="person_x" type="text" placeholder="person_x">
+    <input class="normal" id="person_y" type="text" placeholder="person_y">
+    <button class="button" onclick=add_person()>Add Person</button>
+    <button class="button" onclick=make_random_person()>Make Random Person</button>
+    <button class="button" onclick=remove_person()>Remove All Person</button>
+    <br>
+    <input class="normal" id="depth_limit" type="text" placeholder="depth_limit" value=9>
+    <button class="button" onclick=solve()>Solve</button>
+    
+    <br>
+    <style type="text/css">
+        .menu{
+            width: 160px;
+            height: 40px;
+            margin: 4px;
+        }
+        .button{
+            width: 160px;
+            height: 40px;
+            margin: 4px;
+        }
+        .normal{
+            width: 152px;
+            height: 30px;
+            margin: 4px;
+        }      
+        div.console_log {
+            position: absolute;
+            top: 0px; 
+            left: 500px;
+            width: 600px;
+            height: 480px;
+            margin-bottom: 1.5em;
+            background-color: #000000;
+            border: 1px #c0c0c0 solid;
+            color: #ffffff;
+            overflow: scroll;
+        }
+    </style>
+    <script type="text/javascript">
+        console.log = function (log) {
+            container = document.getElementById('console_log')
+            container.innerHTML += log + "<br>";
+            container.scrollTop = container.scrollHeight;
+        };
+    </script>
+    <div class="console_log" id="console_log"></div>
+
+  </body>
+</html>
