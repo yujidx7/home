@@ -170,6 +170,8 @@ onClick = function(e) {
     selectCursorY = Math.floor((e.clientY - rect.top) / this.w)
     document.getElementById('route_x').value = selectCursorX;
     document.getElementById('route_y').value = selectCursorY;
+    document.getElementById('person_x').value = selectCursorX;
+    document.getElementById('person_y').value = selectCursorY;
     for(var pid = 0; pid < person_num(); pid++)
     {
         if(person_data(pid, 0) == selectCursorX && person_data(pid, 1) == selectCursorY)
