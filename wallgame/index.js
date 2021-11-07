@@ -197,7 +197,7 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     }
   
    }
-   loadPackage({"files": [{"filename": "/field/field_99", "start": 0, "end": 405}, {"filename": "/field/field_4", "start": 405, "end": 825}, {"filename": "/field/field_2", "start": 825, "end": 1244}, {"filename": "/field/field_1", "start": 1244, "end": 1668}, {"filename": "/field/field_3", "start": 1668, "end": 2088}], "remote_package_size": 2088, "package_uuid": "b89ea77e-de41-49c2-b1e6-8fd48af17e4c"});
+   loadPackage({"files": [{"filename": "/field/field_99", "start": 0, "end": 405}, {"filename": "/field/field_4", "start": 405, "end": 825}, {"filename": "/field/field_2", "start": 825, "end": 1244}, {"filename": "/field/field_1", "start": 1244, "end": 1668}, {"filename": "/field/field_3", "start": 1668, "end": 2088}], "remote_package_size": 2088, "package_uuid": "e2e58ded-b270-4a55-8b60-3c90453203be"});
   
   })();
   
@@ -1890,7 +1890,7 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  19708: function($0) {let fieldName = document.getElementById('field_name'); var option = document.createElement("option"); option.text = $0; option.value = $0; fieldName.appendChild(option);}
+  19708: function($0) {let fieldName = document.getElementById('field_name'); var option = document.createElement("option"); var text = UTF8ToString($0); option.text = text; option.value = text; fieldName.appendChild(option);}
 };
 
 

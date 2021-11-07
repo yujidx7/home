@@ -187,8 +187,8 @@ initSelectFieldName = function(){
 }
 
 read_field = function(){
-    let fieldName = document.getElementById('field_name').value
-    goalData = _readFile(fieldName)
+    let fieldFileIndex = document.getElementById('field_name').selectedIndex
+    goalData = _readFile(fieldFileIndex)
     draw()
     console.log('Finish: read_field')
 }
