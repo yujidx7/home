@@ -3,7 +3,7 @@ function onloadForIndexPage() {
 }
 
 function onloadForQuestionPage() {
-    loadFile('../questions.json', generateHtmlForQuestionPage);
+    loadFile('./questions.json', generateHtmlForQuestionPage);
 }
 
 function loadFile(path, onSuccess) {
